@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -45,15 +46,11 @@ public class CommentController {
 
 
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
-    @GetMapping("/task/{taskId}")
-    public ResponseEntity<List<CommentResponse>> getComments(
-
-            @PathVariable Long taskId
-
-    ){
+    @GetMapping
+    public ResponseEntity<List<CommentResponse>> getAllComments(){
 
         return ResponseEntity.ok(
-                commentService.getCommentsByTask(taskId)
+                commentService.getAllComments()
         );
 
     }
@@ -72,5 +69,14 @@ public class CommentController {
         return ResponseEntity.ok("Comment deleted successfully");
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
+    @GetMapping("/all")
+    public Page<CommentResponse> getComments(
+
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size){
+
+        return commentService.getComments(page, size);
+    }
 
 }

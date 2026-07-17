@@ -16,9 +16,13 @@ import com.jeevan.taskflowapi.service.CommentService;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+
 
 
 import java.time.LocalDateTime;
@@ -99,23 +103,28 @@ public class CommentServiceImpl implements CommentService {
 
 
     @Override
-    public List<CommentResponse> getCommentsByTask(Long taskId) {
+    public List<CommentResponse> getAllComments() {
 
+        User currentUser = getCurrentUser();
 
-        return commentRepository.findAll()
+        List<Comment> comments;
 
-                .stream()
+        if (currentUser.getRole() == Role.ROLE_ADMIN) {
 
-                .filter(comment ->
-                        comment.getTask()
-                                .getId()
-                                .equals(taskId)
-                )
+            comments = commentRepository.findByUser(currentUser);
 
+        } else {
+
+            comments = commentRepository.findAll()
+                    .stream()
+                    .filter(comment -> comment.getUser().getId().equals(currentUser.getId()))
+                    .toList();
+
+        }
+
+        return comments.stream()
                 .map(this::mapToResponse)
-
                 .toList();
-
     }
 
 
@@ -138,14 +147,34 @@ public class CommentServiceImpl implements CommentService {
 
         }else{
 
-            throw new RuntimeException("You are not allowed to delete this comment");
+            throw new ResourceNotFoundException("You are not allowed to delete this comment");
 
         }
 
     }
 
+    @Override
+    public Page<CommentResponse> getComments(int page, int size) {
 
+        User currentUser = getCurrentUser();
 
+        Pageable pageable = PageRequest.of(page, size);
+
+        Page<Comment> comments;
+
+        if (currentUser.getRole() == Role.ROLE_ADMIN) {
+
+            comments = commentRepository.findAll(pageable);
+
+        } else {
+
+            comments = commentRepository.findByUser(currentUser, pageable);
+
+        }
+
+        return comments.map(this::mapToResponse);
+
+    }
 
 
     private CommentResponse mapToResponse(Comment comment){
@@ -168,5 +197,4 @@ public class CommentServiceImpl implements CommentService {
                 .build();
 
     }
-
 }
