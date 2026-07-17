@@ -154,7 +154,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Page<CommentResponse> getComments(int page, int size) {
+    public List<CommentResponse> getComments(int page, int size) {
 
         User currentUser = getCurrentUser();
 
@@ -172,8 +172,10 @@ public class CommentServiceImpl implements CommentService {
 
         }
 
-        return comments.map(this::mapToResponse);
-
+        return comments.getContent()
+                .stream()
+                .map(this::mapToResponse)
+                .toList();
     }
 
 

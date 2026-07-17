@@ -15,5 +15,5 @@ public interface CommentService {
 
     void deleteComment(Long id);
 
-    Page<CommentResponse> getComments(int page, int size);
+    List<CommentResponse> getComments(int page, int size);
 }

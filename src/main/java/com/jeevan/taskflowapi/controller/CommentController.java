@@ -71,12 +71,14 @@ public class CommentController {
 
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @GetMapping("/all")
-    public Page<CommentResponse> getComments(
+    public ResponseEntity<List<CommentResponse>> getComments(
 
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size){
 
-        return commentService.getComments(page, size);
+        return ResponseEntity.ok(
+                commentService.getComments(page, size)
+        );
     }
 
 }
