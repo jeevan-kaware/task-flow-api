@@ -403,7 +403,7 @@ All secured endpoints require a valid JWT Bearer Token.
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/task-flow-api.git
+git clone https://github.com/jeevan-kaware/task-flow-api.git
 ```
 
 ```bash
