@@ -25,7 +25,7 @@ public class SwaggerConfig {
                         new Server()
                                 .url("https://task-flow-api-production-9465.up.railway.app")
                 ))
-                  .info(new Info()cd
+                  .info(new Info()
                         .title("Task Flow API")
                         .version("1.0")
                         .description("Task Management REST API"))
