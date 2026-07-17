@@ -1,0 +1,601 @@
+# 🚀 Task Flow API
+
+<div align="center">
+
+# 📋 Task Flow API
+
+### Secure Task Management REST API built with Spring Boot
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Java-21-red?style=for-the-badge&logo=openjdk&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Spring_Boot-3.5-green?style=for-the-badge&logo=springboot"/>
+
+<img src="https://img.shields.io/badge/Spring_Security-6-green?style=for-the-badge&logo=springsecurity"/>
+
+<img src="https://img.shields.io/badge/JWT-Authentication-orange?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/PostgreSQL-Neon-blue?style=for-the-badge&logo=postgresql"/>
+
+<img src="https://img.shields.io/badge/Railway-Deployed-purple?style=for-the-badge&logo=railway"/>
+
+<img src="https://img.shields.io/badge/Maven-Build-red?style=for-the-badge&logo=apachemaven"/>
+
+<img src="https://img.shields.io/badge/REST-API-success?style=for-the-badge"/>
+
+</p>
+
+</div>
+
+---
+
+# 📖 Overview
+
+Task Flow API is a production-ready **Task Management REST API** built using **Spring Boot**.
+
+The application allows **Admins** to manage projects, tasks and users while authenticated **Users** can securely manage their assigned work.
+
+The project follows a layered architecture with secure authentication using **JWT Access Token + Refresh Token**, Role-Based Authorization using Spring Security and clean REST API design.
+
+It is deployed on **Railway** with **Neon PostgreSQL** database.
+
+---
+
+# 🌐 Live Demo
+
+## 🚀 API Base URL
+
+https://task-flow-api-production-9465.up.railway.app
+
+---
+
+## 📚 Swagger Documentation
+
+https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication
+
+- User Registration
+- Secure Login
+- JWT Authentication
+- Refresh Token
+- Logout
+- BCrypt Password Encryption
+
+---
+
+## 👥 User Management
+
+- Get All Users (Admin)
+- Get User By ID (Admin)
+
+---
+
+## 📁 Project Management
+
+- Create Project
+- Update Project
+- Delete Project
+- Get All Projects
+- Get Project By ID
+- Search Projects
+- Pagination
+- Sorting
+
+---
+
+## ✅ Task Management
+
+- Assign Task
+- Update Task
+- Delete Task
+- Get All Tasks
+- Get Task By ID
+- Search Tasks
+- Update Task Status
+
+---
+
+## 💬 Comment Management
+
+- Add Comment
+- Delete Comment
+- Get All Comments
+- Pagination Support
+
+Business Logic
+
+- Admin can view all comments.
+- Users can only view their own comments.
+- Admin can delete any comment.
+- Users can delete only their own comments.
+
+---
+
+## 🔒 Security
+
+- Spring Security
+- JWT Authentication
+- Refresh Token Authentication
+- Role-Based Authorization
+- Method Level Security using `@PreAuthorize`
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Used |
+|------------|------|
+| Java 21 | ✅ |
+| Spring Boot | ✅ |
+| Spring Security | ✅ |
+| Spring Data JPA | ✅ |
+| Hibernate | ✅ |
+| PostgreSQL (Neon) | ✅ |
+| JWT | ✅ |
+| Maven | ✅ |
+| Railway | ✅ |
+| Swagger OpenAPI | ✅ |
+| Lombok | ✅ |
+| Bean Validation | ✅ |
+
+---
+
+# 🧩 Architecture
+
+```
+Controller
+      ↓
+Service
+      ↓
+Repository
+      ↓
+PostgreSQL Database
+```
+
+---
+
+# 🔑 Authorization
+
+The project uses Role Based Access Control.
+
+| Role | Permissions |
+|-------|-------------|
+| ADMIN | Full Access |
+| USER | Limited Access |
+
+Authentication is handled using JWT Bearer Token.
+
+All secured APIs require:
+
+Authorization
+
+Bearer YOUR_ACCESS_TOKEN  ---
+
+# 📡 REST API Documentation
+
+## 🔐 Authentication APIs
+
+| Method | Endpoint | Access | Description |
+|---------|----------|--------|-------------|
+| POST | `/auth/register` | Public | Register a new user |
+| POST | `/auth/login` | Public | Login and receive Access Token + Refresh Token |
+| POST | `/auth/refresh` | Public | Generate a new Access Token using Refresh Token |
+| POST | `/auth/logout` | Authenticated | Logout by invalidating Refresh Token |
+
+---
+
+## 👥 User APIs
+
+| Method | Endpoint | Access | Description |
+|---------|----------|--------|-------------|
+| GET | `/users` | ADMIN | Get all registered users |
+| GET | `/users/{id}` | ADMIN | Get user details by ID |
+
+---
+
+## 📁 Project APIs
+
+| Method | Endpoint | Access | Description |
+|---------|----------|--------|-------------|
+| POST | `/projects` | ADMIN | Create a new project |
+| GET | `/projects` | ADMIN, USER | Get all projects |
+| GET | `/projects/{id}` | ADMIN, USER | Get project by ID |
+| PUT | `/projects/{id}` | ADMIN | Update project |
+| DELETE | `/projects/{id}` | ADMIN | Delete project |
+| GET | `/projects/all?page=0&size=5&sortBy=projectName` | ADMIN, USER | Pagination & Sorting |
+| GET | `/projects/search?keyword=java` | ADMIN, USER | Search projects |
+
+---
+
+## ✅ Task APIs
+
+| Method | Endpoint | Access | Description |
+|---------|----------|--------|-------------|
+| POST | `/tasks/assign` | ADMIN | Assign task to user |
+| GET | `/tasks` | ADMIN, USER | Get all tasks |
+| GET | `/tasks/{id}` | ADMIN, USER | Get task by ID |
+| PUT | `/tasks/{id}` | ADMIN | Update task |
+| DELETE | `/tasks/{id}` | ADMIN | Delete task |
+| PATCH | `/tasks/{id}/status` | ADMIN, USER | Update task status |
+| GET | `/tasks/search?keyword=bug` | ADMIN, USER | Search tasks |
+
+---
+
+## 💬 Comment APIs
+
+| Method | Endpoint | Access | Description |
+|---------|----------|--------|-------------|
+| POST | `/comments` | ADMIN, USER | Add comment |
+| GET | `/comments` | ADMIN, USER | Get comments (Role Based) |
+| GET | `/comments/all?page=0&size=10` | ADMIN, USER | Paginated comments |
+| DELETE | `/comments/{id}` | ADMIN, USER | Delete own comment or any comment (Admin) |
+
+---
+
+# 🔒 API Security
+
+Every protected endpoint uses
+
+- JWT Bearer Authentication
+- Spring Security
+- Method Level Authorization using `@PreAuthorize`
+
+---
+
+## Authorization Rules
+
+### 👑 ADMIN
+
+- Full access to all APIs
+- Create / Update / Delete Projects
+- Assign Tasks
+- Manage Users
+- View every Comment
+- Delete every Comment
+
+---
+
+### 👤 USER
+
+- Login
+- Refresh Token
+- Logout
+- View Projects
+- View Tasks
+- Update Task Status
+- Add Comments
+- View only their own Comments
+- Delete only their own Comments
+
+---
+
+# 🛡 Security Features
+
+- JWT Access Token Authentication
+- Refresh Token Authentication
+- BCrypt Password Encryption
+- Role Based Authorization
+- Spring Security Filters
+- Custom UserDetails
+- Authentication Entry Point
+- Global Exception Handling
+- Bean Validation
+- Protected REST Endpoints
+
+---
+
+# 📂 Project Structure
+
+```
+src
+ ├── config
+ ├── controller
+ ├── dto
+ │     ├── request
+ │     └── response
+ ├── entity
+ ├── enums
+ ├── exception
+ ├── repository
+ ├── security
+ ├── service
+ │     ├── impl
+ ├── util
+ └── TaskFlowApiApplication
+```
+
+---
+
+# 🗄 Database
+
+The application uses **Neon PostgreSQL**.
+
+Main Tables
+
+- users
+- refresh_tokens
+- projects
+- tasks
+- comments
+
+Relationships
+
+```
+User
+ │
+ ├──────< Project
+ │
+ ├──────< Task
+ │
+ └──────< Comment
+
+Task
+ │
+ └──────< Comment
+```
+
+---
+
+# 🔄 Request Flow
+
+```
+Client
+
+   │
+
+   ▼
+
+Controller
+
+   │
+
+   ▼
+
+Service
+
+   │
+
+   ▼
+
+Repository
+
+   │
+
+   ▼
+
+PostgreSQL Database
+```
+
+---
+
+# 🧪 API Testing
+
+The API has been tested using:
+
+- Swagger UI
+- Postman
+
+All secured endpoints require a valid JWT Bearer Token.
+
+---
+
+# 📈 Production Deployment
+
+| Service | Status |
+|----------|--------|
+| Railway Deployment | ✅ |
+| Neon PostgreSQL | ✅ |
+| Swagger UI | ✅ |
+| JWT Security | ✅ |
+| Refresh Token | ✅ |
+| REST APIs | ✅ |
+| Role Based Authorization | ✅ |
+---
+
+# ⚙️ Getting Started
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/task-flow-api.git
+```
+
+```bash
+cd task-flow-api
+```
+
+---
+
+## 2️⃣ Configure Database
+
+Create your PostgreSQL database (Neon or Local PostgreSQL).
+
+Update your `application.properties`
+
+```properties
+spring.datasource.url=YOUR_DATABASE_URL
+spring.datasource.username=YOUR_DATABASE_USERNAME
+spring.datasource.password=YOUR_DATABASE_PASSWORD
+```
+
+---
+
+## 3️⃣ JWT Configuration
+
+```properties
+jwt.secret=YOUR_SECRET_KEY
+jwt.expiration=86400000
+jwt.refresh-expiration=604800000
+```
+
+---
+
+## 4️⃣ Run the Project
+
+Using Maven
+
+```bash
+./mvnw spring-boot:run
+```
+
+or
+
+```bash
+mvn spring-boot:run
+```
+
+---
+
+# 📖 Open Swagger
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+Production
+
+```
+https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
+```
+
+---
+
+# 🌍 Live Deployment
+
+| Service | URL |
+|---------|-----|
+| Railway | https://task-flow-api-production-9465.up.railway.app |
+| Swagger UI | https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html |
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots inside the `screenshots` folder.
+
+Recommended screenshots
+
+```
+screenshots/
+
+├── swagger-home.png
+├── login-api.png
+├── register-api.png
+├── refresh-token.png
+├── project-api.png
+├── task-api.png
+├── comment-api.png
+├── railway-deployment.png
+├── database-neon.png
+```
+
+Example
+
+```md
+## Swagger UI
+
+![Swagger](screenshots/swagger-home.png)
+
+---
+
+## Login API
+
+![Login](screenshots/login-api.png)
+
+---
+
+## Project APIs
+
+![Projects](screenshots/project-api.png)
+
+---
+
+## Task APIs
+
+![Tasks](screenshots/task-api.png)
+
+---
+
+## Comment APIs
+
+![Comments](screenshots/comment-api.png)
+```
+
+---
+
+# 🚀 Future Improvements
+
+- Email Notifications
+- File Attachment Support
+- Activity Logs
+- Dashboard Analytics
+- Docker Support
+- Unit Testing
+- Integration Testing
+- Redis Cache
+- CI/CD Pipeline
+- API Rate Limiting
+
+---
+
+# 💡 Learning Outcomes
+
+This project helped me gain practical experience with
+
+- Spring Boot
+- Spring Security
+- JWT Authentication
+- Refresh Token Flow
+- Role-Based Authorization
+- REST API Development
+- PostgreSQL
+- Spring Data JPA
+- Hibernate
+- Maven
+- Swagger OpenAPI
+- Railway Deployment
+- Neon PostgreSQL
+- Exception Handling
+- Bean Validation
+- Clean Layered Architecture
+
+---
+
+# 👨‍💻 Author
+
+**Jeevan Kaware**
+
+Java Backend Developer
+
+GitHub:
+https://github.com/YOUR_GITHUB_USERNAME
+
+LinkedIn:
+https://linkedin.com/in/YOUR_LINKEDIN_USERNAME
+
+Portfolio:
+(Add after completing your portfolio website.)
+
+---
+
+# ⭐ If you like this project
+
+Please consider giving it a ⭐ on GitHub.
+
+It motivates me to build more production-ready backend projects.
+
+---
+
+<div align="center">
+
+### 🚀 Built with Java, Spring Boot, Spring Security, PostgreSQL and ❤️
+
+**Thank you for visiting this repository.**
+
+</div>
