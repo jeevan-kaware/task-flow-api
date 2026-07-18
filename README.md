@@ -580,8 +580,9 @@ https://github.com/jeevan-kaware/task-flow-api
 
 LinkedIn:
 https://www.linkedin.com/in/jeevan-kaware-080643355
+
 Portfolio:
-(Add after completing your portfolio website.)
+---
 
 ---
 
