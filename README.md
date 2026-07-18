@@ -50,15 +50,14 @@ It is deployed on **Railway** with **Neon PostgreSQL** database.
 
 # 🌐 Live Demo
 
-## 🚀 API Base URL
+## 🚀API Base URL
 
 https://task-flow-api-production-9465.up.railway.app
 ---
 
-## 📚 Swagger Documentation
+## 📚 Swagger UI
 
 https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
-
 ---
 
 # ✨ Features
@@ -140,7 +139,7 @@ Business Logic
 | Spring Boot | ✅ |
 | Spring Security | ✅ |
 | OAuth2 |  ✅ |
-Spring Mail | ✅ |
+| Spring Mail | ✅ |
 | Spring Data JPA | ✅ |
 | Hibernate | ✅ |
 | PostgreSQL (Neon) | ✅ |
@@ -180,9 +179,9 @@ Authentication is handled using JWT Bearer Token.
 
 All secured APIs require:
 
-Authorization
-
-Bearer YOUR_ACCESS_TOKEN  ---
+```text
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
 
 # 📡 REST API Documentation
 
