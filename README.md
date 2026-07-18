@@ -22,6 +22,10 @@
 
 <img src="https://img.shields.io/badge/Maven-Build-red?style=for-the-badge&logo=apachemaven"/>
 
+<img src="https://img.shields.io/badge/OAuth2-Google-blue?style=for-the-badge&logo=google"/>
+
+<img src="https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger"/>
+
 <img src="https://img.shields.io/badge/REST-API-success?style=for-the-badge"/>
 
 </p>
@@ -49,7 +53,6 @@ It is deployed on **Railway** with **Neon PostgreSQL** database.
 ## 🚀 API Base URL
 
 https://task-flow-api-production-9465.up.railway.app
-
 ---
 
 ## 📚 Swagger Documentation
@@ -68,7 +71,7 @@ https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
 - Refresh Token
 - Logout
 - BCrypt Password Encryption
-
+- Google OAuth2 Login
 ---
 
 ## 👥 User Management
@@ -100,7 +103,7 @@ https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
 - Get Task By ID
 - Search Tasks
 - Update Task Status
-
+- 📧 Automatic Email Notification when a task is assigned to a user.
 ---
 
 ## 💬 Comment Management
@@ -137,6 +140,7 @@ Business Logic
 | Spring Boot | ✅ |
 | Spring Security | ✅ |
 | OAuth2 |  ✅ |
+Spring Mail | ✅ |
 | Spring Data JPA | ✅ |
 | Hibernate | ✅ |
 | PostgreSQL (Neon) | ✅ |
@@ -275,7 +279,7 @@ Every protected endpoint uses
 - Add Comments
 - View only their own Comments
 - Delete only their own Comments
-- 📧 Automatic Email Notifications using Spring Mail.
+- 
 ---
 
 # 🛡 Security Features
@@ -382,6 +386,7 @@ PostgreSQL Database
 The API has been tested using:
 
 - Swagger UI
+- Browser (Swagger UI)
 - Postman
 
 All secured endpoints require a valid JWT Bearer Token.
@@ -422,9 +427,9 @@ Create your PostgreSQL database (Neon or Local PostgreSQL).
 Update your `application.properties`
 
 ```properties
-spring.datasource.url=YOUR_DATABASE_URL
-spring.datasource.username=YOUR_DATABASE_USERNAME
-spring.datasource.password=YOUR_DATABASE_PASSWORD
+spring.datasource.url=<YOUR_POSTGRESQL_DATABASE_URL>
+spring.datasource.username=<YOUR_POSTGRESQL_USERNAME>
+spring.datasource.password=<YOUR_POSTGRESQL_PASSWORD>
 ```
 
 ---
@@ -432,7 +437,7 @@ spring.datasource.password=YOUR_DATABASE_PASSWORD
 ## 3️⃣ JWT Configuration
 
 ```properties
-jwt.secret=YOUR_SECRET_KEY
+jwt.secret=<YOUR_SECRET_KEY>
 jwt.expiration=86400000
 jwt.refresh-expiration=604800000
 ```
@@ -582,7 +587,7 @@ LinkedIn:
 https://www.linkedin.com/in/jeevan-kaware-080643355
 
 Portfolio:
----
+Coming Soon...
 
 ---
 
