@@ -38,6 +38,8 @@ The application allows **Admins** to manage projects, tasks and users while auth
 
 The project follows a layered architecture with secure authentication using **JWT Access Token + Refresh Token**, Role-Based Authorization using Spring Security and clean REST API design.
 
+This project is designed with a backend-first architecture. A React frontend can be integrated in the future to transform it into a complete production-ready Full Stack Task Management Application.
+
 It is deployed on **Railway** with **Neon PostgreSQL** database.
 
 ---
@@ -124,7 +126,7 @@ Business Logic
 - Refresh Token Authentication
 - Role-Based Authorization
 - Method Level Security using `@PreAuthorize`
-
+- Google OAuth2 Login
 ---
 
 # 🛠 Tech Stack
@@ -134,6 +136,7 @@ Business Logic
 | Java 21 | ✅ |
 | Spring Boot | ✅ |
 | Spring Security | ✅ |
+| OAuth2 |  ✅ |
 | Spring Data JPA | ✅ |
 | Hibernate | ✅ |
 | PostgreSQL (Neon) | ✅ |
@@ -272,7 +275,7 @@ Every protected endpoint uses
 - Add Comments
 - View only their own Comments
 - Delete only their own Comments
-
+- 📧 Automatic Email Notifications using Spring Mail.
 ---
 
 # 🛡 Security Features
@@ -287,7 +290,7 @@ Every protected endpoint uses
 - Global Exception Handling
 - Bean Validation
 - Protected REST Endpoints
-
+- Google OAuth2 Authentication
 ---
 
 # 📂 Project Structure
@@ -531,17 +534,15 @@ Example
 
 # 🚀 Future Improvements
 
-- Email Notifications
-- File Attachment Support
-- Activity Logs
-- Dashboard Analytics
+- React Frontend
 - Docker Support
 - Unit Testing
 - Integration Testing
 - Redis Cache
 - CI/CD Pipeline
 - API Rate Limiting
-
+- Audit Logging
+- Dashboard Analytics
 ---
 
 # 💡 Learning Outcomes
@@ -552,6 +553,7 @@ This project helped me gain practical experience with
 - Spring Security
 - JWT Authentication
 - Refresh Token Flow
+- Google OAuth2
 - Role-Based Authorization
 - REST API Development
 - PostgreSQL
@@ -574,11 +576,10 @@ This project helped me gain practical experience with
 Java Backend Developer
 
 GitHub:
-https://github.com/YOUR_GITHUB_USERNAME
+https://github.com/jeevan-kaware/task-flow-api
 
 LinkedIn:
-https://linkedin.com/in/YOUR_LINKEDIN_USERNAME
-
+https://www.linkedin.com/in/jeevan-kaware-080643355
 Portfolio:
 (Add after completing your portfolio website.)
 
