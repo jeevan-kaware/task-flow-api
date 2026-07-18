@@ -600,7 +600,7 @@ It motivates me to build more production-ready backend projects.
 
 <div align="center">
 
-### 🚀 Built with Java, Spring Boot, Spring Security, PostgreSQL and ❤️
+### 🚀 Built with Java, Spring Boot, Spring Security, PostgreSQL, OAuth2, JWT and ❤️
 
 **Thank you for visiting this repository.**
 
