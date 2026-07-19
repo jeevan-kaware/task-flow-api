@@ -22,8 +22,6 @@
 
 <img src="https://img.shields.io/badge/Maven-Build-red?style=for-the-badge&logo=apachemaven"/>
 
-<img src="https://img.shields.io/badge/OAuth2-Google-blue?style=for-the-badge&logo=google"/>
-
 <img src="https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger"/>
 
 <img src="https://img.shields.io/badge/REST-API-success?style=for-the-badge"/>
