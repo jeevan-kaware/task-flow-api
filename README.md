@@ -26,6 +26,8 @@
 
 <img src="https://img.shields.io/badge/REST-API-success?style=for-the-badge"/>
 
+<img src="https://img.shields.io/badge/OAuth2-Google-blue?style=for-the-badge&logo=google"/>
+
 </p>
 
 </div>
