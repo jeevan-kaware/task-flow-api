@@ -484,65 +484,79 @@ https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
 
 # 📸 Screenshots
 
-The following screenshots demonstrate the core functionality of the application.
-
-## 📚 Swagger UI
-
-![Swagger](Screenshots/18-swagger-ui.png.png)
+The following screenshots demonstrate the core features of the Smart Flow API.
 
 ---
 
-## 👤 User Registration
+## 🔐 User Registration
 
-![Register](Screenshots/01-register-api.png)
-
----
-
-
-## 🔐 User Login
-
-![Login](Screenshots/02-login-api.png.png)
-
----
-## 👤 Refresh Token
-
-![Profile](Screenshots/03-refresh-token-api.png.png)
+![Register API](Screenshots/01-register-api.png)
 
 ---
 
-Example
+## 🔑 Login & JWT Authentication
 
-```md
-## Swagger UI
-
-![Swagger](screenshots/swagger-home.png)
+![Login API](Screenshots/02-login-api.png)
 
 ---
 
-## Login API
+## 🌐 Google OAuth2 Login
 
-![Login](screenshots/login-api.png)
-
----
-
-## Project APIs
-
-![Projects](screenshots/project-api.png)
+![Google OAuth2](Screenshots/05-google-oauth-login.png)
 
 ---
 
-## Task APIs
+## 📁 Create Project
 
-![Tasks](screenshots/task-api.png)
+![Create Project](Screenshots/06-create-project.png)
+
+---
+
+## 📋 Get All Projects
+
+![Projects](Screenshots/07-get-all-projects.png)
 
 ---
 
-## Comment APIs
+## ✅ Assign Task
 
-![Comments](screenshots/comment-api.png)
-```
+![Assign Task](Screenshots/10-assign-task.png)
 
 ---
+
+## 📝 Task Management
+
+![Tasks](Screenshots/11-get-all-tasks.png)
+
+---
+
+## 💬 Comment Management
+
+![Comments](Screenshots/16-get-comments.png)
+
+---
+
+## 📧 Email Notification
+
+![Task Assignment Email](Screenshots/19-task-assignment-email.png)
+
+---
+
+## 📖 Swagger UI Documentation
+
+![Swagger UI](Screenshots/18-swagger-ui.png)
+
+---
+
+## 🗄 PostgreSQL Database
+
+![Database](Screenshots/20-postgresql-tables.png)
+
+---
+
+## 🔐 Google OAuth2 User Interface
+
+![Google OAuth2 UI](Screenshots/21-google-oauth-ui.png)
 
 # 🚀 Future Improvements
 
