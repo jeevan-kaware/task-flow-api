@@ -484,23 +484,31 @@ https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
 
 # 📸 Screenshots
 
-> Add screenshots inside the `screenshots` folder.
+The following screenshots demonstrate the core functionality of the application.
 
-Recommended screenshots
+## 📚 Swagger UI
 
-```
-screenshots/
+![Swagger](Screenshots/18-swagger-ui.png.png)
 
-├── swagger-home.png
-├── login-api.png
-├── register-api.png
-├── refresh-token.png
-├── project-api.png
-├── task-api.png
-├── comment-api.png
-├── railway-deployment.png
-├── database-neon.png
-```
+---
+
+## 👤 User Registration
+
+![Register](Screenshots/01-register-api.png)
+
+---
+
+
+## 🔐 User Login
+
+![Login](Screenshots/02-login-api.png.png)
+
+---
+## 👤 Refresh Token
+
+![Profile](Screenshots/03-refresh-token-api.png.png)
+
+---
 
 Example
 
