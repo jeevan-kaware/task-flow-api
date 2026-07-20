@@ -53,11 +53,13 @@ It is deployed on **Railway** with **Neon PostgreSQL** database.
 ## 🚀API Base URL
 
 https://task-flow-api-production-9465.up.railway.app
+
 ---
 
 ## 📚 Swagger UI
 
 https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
+
 ---
 
 # ✨ Features
@@ -484,7 +486,7 @@ https://task-flow-api-production-9465.up.railway.app/swagger-ui/index.html
 
 # 📸 Screenshots
 
-The following screenshots demonstrate the core features of the Smart Flow API.
+All screenshots were captured while testing the API using Swagger UI and demonstrate the major features of the application.
 
 ---
 
@@ -614,7 +616,7 @@ Coming Soon...
 
 # ⭐ If you like this project
 
-Please consider giving it a ⭐ on GitHub.
+If you found this project useful, consider giving it a ⭐ to support my work.
 
 It motivates me to build more production-ready backend projects.
 
